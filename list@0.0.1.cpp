@@ -103,10 +103,11 @@ void del(node_t *&begin)
 
 }
 
-void reverse(node_t *&begin)
+void reverse(node_t *&begin, node_t *&end)
 {
 	if (begin == NULL) return;
 	node_t * curr, *next, *prev = NULL;
+	end = begin;
 	curr = begin;
 	while (curr)
 	{
@@ -171,7 +172,7 @@ int main()
 				break;
 
 			case '/':
-				reverse(begin);
+				reverse(begin, end);
 				output(begin);
 				break;
 			
