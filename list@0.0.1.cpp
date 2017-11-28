@@ -118,6 +118,22 @@ void reverse(node_t *&begin)
 	begin = prev;
 }
 
+void del_node(node_t *&begin)
+{
+	if (begin == NULL) return;
+
+	node_t *p = begin;
+	node_t *t;
+
+	while (p)
+	{
+		t = p;
+		p = p->next;
+		delete t;
+	}
+	begin = NULL;
+}
+
 int main()
 {
 	node_t *begin = NULL, *end = NULL;
@@ -164,5 +180,6 @@ int main()
 				break;
 		}
 	}
+	del_node(begin);
     return 0;
 }
